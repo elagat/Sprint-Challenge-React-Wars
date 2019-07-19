@@ -3,7 +3,7 @@
 import React from "react";
 import CharacterGrid from "./components/CharacterGrid.js";
 
-import './App.css';
+import './App.scss';
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out

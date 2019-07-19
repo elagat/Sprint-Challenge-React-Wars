@@ -5,6 +5,7 @@ import CharacterCard from "./CharacterCard.js";
 function CharacterGrid() {
   const [character, setCharacter] = useState([]);
   const [number, setNumber] = useState("1");
+  const numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
   useEffect( () => {
     axios
@@ -20,7 +21,7 @@ function CharacterGrid() {
 
   return (
     <div className="character-grid">
-      <button onClick={() => setNumber(number)}>Next 10 Characters</button>
+      <button onClick={() => setNumber("2")}>Next</button>
       {character.map(character => <CharacterCard name={character.name} />)}
     </div>
   )
