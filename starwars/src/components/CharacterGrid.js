@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CharacterCard from "./CharacterCard.js";
+import { Grid } from "semantic-ui-react";
 
 function CharacterGrid() {
   const [character, setCharacter] = useState([]);
@@ -15,12 +16,12 @@ function CharacterGrid() {
   }, []);
 
   return (
-    <div className="character-grid">
+    <Grid className="character-grid">
       {character.map(character => <CharacterCard name={character.name}
                                                  height={character.height}
                                                  mass={character.mass}
                                                  haircolor={character.hair_color} />)}
-    </div>
+    </Grid>
   )
 }
 
