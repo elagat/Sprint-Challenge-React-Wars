@@ -1,10 +1,14 @@
 import React from "react";
+import { Card } from "semantic-ui-react";
 
 function CharacterCard(props) {
   return (
-    <div className="character-card">
+    <Card className="character-card">
       <h2>{props.name}</h2>
-    </div>
+      <p>Height: {props.height}</p>
+      <p>Mass: {props.mass}</p>
+      <p>Hair Color: {props.haircolor}</p>
+    </Card>
   )
 };
 

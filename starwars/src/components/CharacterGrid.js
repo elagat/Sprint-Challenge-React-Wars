@@ -4,25 +4,22 @@ import CharacterCard from "./CharacterCard.js";
 
 function CharacterGrid() {
   const [character, setCharacter] = useState([]);
-  const [number, setNumber] = useState("1");
-  const numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
   useEffect( () => {
     axios
-      .get(`https://swapi.co/api/people/?page=${number}`)
+      .get(`https://swapi.co/api/people/`)
       .then(res => {
         console.log(res.data);
         setCharacter(res.data.results);
-        setNumber(res.data.results)
       })
-  }, [number]);
-
-  console.log("number", number);
+  }, []);
 
   return (
     <div className="character-grid">
-      <button onClick={() => setNumber("2")}>Next</button>
-      {character.map(character => <CharacterCard name={character.name} />)}
+      {character.map(character => <CharacterCard name={character.name}
+                                                 height={character.height}
+                                                 mass={character.mass}
+                                                 haircolor={character.hair_color} />)}
     </div>
   )
 }
